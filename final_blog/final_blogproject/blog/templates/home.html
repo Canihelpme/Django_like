@@ -37,8 +37,10 @@
                         <div class="d-flex justify-content-between align-items-center">                                                                                                                                                                                                 
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='{% url 'detail' post.id %}';"> View</button>
+                                {% if user == object.author%}
                                 <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='{% url 'delete' post.id %}';">Delete</button>
                                 <!--이거 진짜 뭐가 맞는건지 헷갈린다-->
+                                {% endif %}
                             </div>
                             <small class="text-muted">{{ post.pub_date }}</small>
                         </div>
