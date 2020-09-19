@@ -3,6 +3,7 @@ from .models import Post, Comment
 from .forms import PostForm
 from django.utils import timezone
 
+
 # Create your views here.
 
 def home(request):
@@ -90,3 +91,4 @@ def like(request, post_id):
         post.like_users.add(request.user)
     
     return redirect('/' + str(post.id))
+
